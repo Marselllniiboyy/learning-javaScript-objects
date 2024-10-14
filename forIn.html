@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Menu Makanan Jineng Dalem</h1>
+    <div id="menu"></div>
+    <script>
+      // for (key in object) {
+      //   // executes the body for each key among object properties
+      // }
+
+      // let user = {
+      //   name: "Marsel",
+      //   no: 20,
+      //   class: "C",
+      // };
+
+      // let key;
+
+      // for (key in user) {
+      //   console.log(key);
+      //   //Ngeluarin yang ada di dalam object
+      //   console.log(user[key]);
+      // }
+
+      // let codes = {
+      //   22: "Bakso",
+      //   21: "Nasi Goreng",
+      //   28: "Anjing",
+      //   98: "Rujak",
+      //   65: "Tolol",
+      // };
+
+      // for (let code in codes) {
+      //   // keys
+      //   alert(code);
+      //   // value
+      //   alert(codes[code]);
+      // }
+
+      let codes = {
+        "+49": "Germany",
+        "+41": "Switzerland",
+        "+44": "Great Britain",
+        // ..,
+        "+1": "USA",
+      };
+
+      // The short answer is: “ordered in a special fashion”: integer properties are sorted, others appear in creation order. The details follow.
+      // phone codes:
+      // for (let code in codes) {
+      //   // key
+      //   alert(code);
+      //   // value
+      //   alert(codes[code]);
+      //   console.log(code, codes[code]);
+      // }
+      // The phone codes go in the ascending sorted order, because they are integers. So we see 1, 41, 44, 49.
+      alert(String(Math.trunc(Number("49")))); //"49", same, integer property
+      console.log(String(Math.trunc(Number("49"))));
+      alert(String(Math.trunc(Number("+49")))); //"49", not same "+49" ⇒ not integer property
+      console.log(String(Math.trunc(Number("+49"))));
+      alert(String(Math.trunc(Number("1.2")))); //"1", not same "1.2" ⇒ not integer property
+
+      let user = {
+        name: "Marsel",
+        surname: "Prabowo",
+      };
+
+      user.age = 20;
+
+      for (let i in user) {
+        console.log(user[i]);
+      }
+
+      // So, to fix the issue with the phone codes, we can “cheat” by making the codes non-integer. Adding a plus "+" sign before each code is enough.
+      for (let code in codes) {
+        console.log(code); // 49, 41, 44, 1
+      }
+    </script>
+  </body>
+</html>

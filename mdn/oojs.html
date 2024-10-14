@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>
+      This example requires you to enter commands in your browser's JavaScript
+      console (see
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools"
+        >What are browser developer tools</a
+      >
+      for more information).
+    </p>
+
+    <script>
+      const person = {};
+      // for (let i = 1; i <= 10; i++) {
+      //   let line = "";
+      //   for (let i = 1; i <= 10; i++) {
+      //     line = "*  ";
+      //   }
+      //   line += "\n";
+      //   console.log(line);
+      // }
+
+      let n = 10;
+      let string = "";
+      for (let i = 1; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+          string += "* ";
+        }
+        //break
+        string += "\n";
+      }
+      console.log(string);
+    </script>
+  </body>
+</html>
