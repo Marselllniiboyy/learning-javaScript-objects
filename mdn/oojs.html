@@ -18,26 +18,99 @@
     </p>
 
     <script>
-      const person = {};
-      // for (let i = 1; i <= 10; i++) {
-      //   let line = "";
-      //   for (let i = 1; i <= 10; i++) {
-      //     line = "*  ";
-      //   }
-      //   line += "\n";
-      //   console.log(line);
-      // }
+      const person = {
+        // name: ["Marsel", "Jokowi"],
+        name: {
+          first: "Marsel",
+          last: "Jokowi",
+        },
+        age: 32,
+        bio: function () {
+          console.log(
+            `${this.name[0]} and ${this.name[1]} is ${this.age} year old.`
+          );
+        },
+        intorduceSelf: function () {
+          console.log(`Hi! I'm ${this.name[0]}`);
+        },
+      };
 
-      let n = 10;
-      let string = "";
-      for (let i = 1; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-          string += "* ";
-        }
-        //break
-        string += "\n";
+      const myDataName = "height"; //key
+      const myDataValue = "1.75m"; //value
+
+      person[myDataName] = myDataValue;
+      // In the example below, the logProperty() function can use person[propertyName] to retrieve the value of the property named in propertyName.
+      function logProperty(propertyName) {
+        console.log(person[propertyName]);
       }
-      console.log(string);
+      logProperty("name");
+      logProperty("age");
+
+      person.age = 45;
+      person.name.last = "Prabowo";
+
+      person.age;
+      person["name"]["last"] = "Windah";
+
+      logProperty("name");
+      logProperty("age");
+
+      // made some object
+      // What is "this"?
+      const person1 = {
+        name: "Chris",
+        introduceSelf() {
+          // rever to the object that the method was called on
+          // lu berada di dalam object yang dipangil
+          console.log(`Hi! I'm ${this.name}.`);
+        },
+      };
+
+      const person2 = {
+        name: "Deepti",
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name}.`);
+        },
+      };
+
+      // "this" refers to the object on which the method is called, which allows the same method definition to work for multiple objects.
+      person1.introduceSelf();
+      person2.introduceSelf();
+
+      // Introducing constructors
+      function createPerson(name) {
+        const obj = {};
+        obj.name = name;
+        obj.introduceSelf = function () {
+          console.log(`Hi I'm ${this.name}.`);
+        };
+        return obj;
+      }
+
+      const jamal = createPerson("jamal");
+      jamal.introduceSelf();
+      console.log(jamal);
+
+      const yati = createPerson("Yati");
+      yati.introduceSelf();
+      console.log(yati);
+
+      // was good but to long-winded
+      // A better way is to use a constructor. A constructor is just a function called using the new keyword.
+      function Person(name) {
+        this.name = name;
+        this.introduceSelf = function () {
+          console.log(`Hi my name is ${this.name}`);
+        };
+      }
+
+      // A constructor is just a function called using the new keyword. When you call a constructor, it will:
+      // create a new object
+      // bind this to the new object, so you can refer to this in your constructor code
+      // run the code in the constructor
+      // return the new object.
+      const aqua = new Person("aqua");
+      aqua.introduceSelf();
     </script>
   </body>
 </html>
