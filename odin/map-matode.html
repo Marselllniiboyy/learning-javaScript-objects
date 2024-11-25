@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // map is a function
+      // callback has a argument
+      // function addOne(num) {
+      //   let result = num + 1;
+      //   return result;
+      // }
+
+      let numbers = [1, 2, 3, 4, 5];
+      // map returns a new array and does not change the original array.
+      // let num = numbers.map(addOne);
+
+      // One line
+      let num = numbers.map((num) => num + 1);
+      console.log(num);
+    </script>
+  </body>
+</html>
