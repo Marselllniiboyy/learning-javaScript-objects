@@ -13,7 +13,7 @@ function sumOfTripledEvens() {
   // }
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
-      const tripelNumber = numbers[i] + 3;
+      const tripelNumber = numbers[i] * 3;
       evenNumbersOnly.push(numbers[i]);
       sumEvent += tripelNumber;
     }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function camelize(arr) {
+        return arr
+          .split("-")
+          .map((item, index) => {
+            if (index === 0) return item;
+            return item[0].toUpperCase() + item.slice(1);
+          })
+          .join("");
+      }
+
+      console.log(camelize("background-color") === "backgroundColor");
+      camelize("list-style-image") == "listStyleImage";
+      console.log(camelize("list-style-image") == "listStyleImage");
+      camelize("-webkit-transition") == "WebkitTransition";
+      console.log(camelize("-webkit-transition") == "WebkitTransition");
+    </script>
+  </body>
+</html>

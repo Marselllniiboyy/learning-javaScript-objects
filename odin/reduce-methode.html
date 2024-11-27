@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 3, 4, 5];
+      let total = 1;
+      let see = [];
+      const symbol = "*";
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[arr.length - 1]) {
+          see.push(`${arr[i]} *`);
+        } else {
+          see.push(`${arr[i]}`);
+        }
+        total *= arr[i];
+      }
+
+      console.log(...see);
+      console.log(total);
+
+      let totalWithReduce = arr.reduce((sumAll, currentItem) => {
+        return sumAll * currentItem;
+      }, 1);
+
+      console.log(totalWithReduce); //120
+    </script>
+  </body>
+</html>
