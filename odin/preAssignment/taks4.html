@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [5, 2, 1, -10, 8];
+      // arr.sort((a, b) => b - a);
+      // manual menggunakan bubble sort
+      for (let i = 0; i < arr.length; i++) {
+        console.log(i, "i");
+        for (let k = 0; k < arr.length - 1; k++) {
+          console.log(arr[k], "k");
+          if (arr[k] < arr[k + 1]) {
+            let temp = arr[k];
+            arr[k] = arr[k + 1];
+            arr[k + 1] = temp; // swap
+            console.log(arr, "swap ke", k + 1);
+          }
+        }
+      }
+
+      alert(arr); // 8, 5, 2, 1, -10
+    </script>
+  </body>
+</html>
