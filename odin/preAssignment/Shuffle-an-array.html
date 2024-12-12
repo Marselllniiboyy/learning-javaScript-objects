@@ -12,12 +12,21 @@
       function shuffle(array) {
         for (let i = 0; i < array.length - 1; i++) {
           let j = Math.floor(Math.random() * 3);
-          let temp = array[i];
-          array[i] = array[j];
-          array[j] = temp;
+          // let temp = array[i];
+          // array[i] = array[j];
+          // array[j] = temp;
+          [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
       }
+
+      // destructuring
+      let a = 2;
+      let b = 3;
+
+      [a, b] = [b, a];
+
+      console.log(a, b);
 
       shuffle(arr);
       console.log(shuffle(arr));

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getAverageAge(users) {
+        let age = users.map((user) => user.age);
+        let average =
+          users.reduce((sum, user) => sum + user.age, 0) / users.length;
+        console.log(`(${age.join("+")})/${users.length}= ${average}`);
+        return average;
+      }
+      let john = { name: "John", age: 25 };
+      let pete = { name: "Pete", age: 30 };
+      let mary = { name: "Mary", age: 29 };
+      let arr = [john, pete, mary];
+      alert(getAverageAge(arr));
+    </script>
+  </body>
+</html>
