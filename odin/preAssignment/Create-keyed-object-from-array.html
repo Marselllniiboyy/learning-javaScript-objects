@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create keyed object from array</title>
+  </head>
+  <body>
+    <script>
+      function groupById(arr) {
+        // return arr.reduce((result, user) => {
+        //   result[user.id] = user;
+        //   return result;
+        // }, {});
+        let userId = {};
+        arr.forEach((user) => (userId[user.id] = user));
+        return userId;
+      }
+
+      let users = [
+        { id: "john", name: "John Smith", age: 20 },
+        { id: "ann", name: "Ann Smith", age: 24 },
+        { id: "pete", name: "Pete Peterson", age: 31 },
+      ];
+
+      let usersById = groupById(users);
+      console.log(usersById);
+      console.log(usersById);
+    </script>
+  </body>
+</html>
